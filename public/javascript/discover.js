@@ -1,28 +1,5 @@
 const postSection = document.querySelector(".postDis");
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const scroll = new LocomotiveScroll({
-        el: document.querySelector('.postDis'),
-        smooth: true, // Enable smooth scrolling
-        smoothMobile: true, // Enable smooth scrolling on mobile devices
-        multiplier: 0.9, // Adjust the scroll speed multiplier
-        lerp: 0.1, // Adjust the interpolation factor for smoother scrolling
-        smartphone: {
-            smooth: true, // Enable smooth scrolling on smartphones
-        },
-        tablet: {
-            smooth: true, // Enable smooth scrolling on tablets
-        },
-        // Optionally, you can adjust easing and damping for smoother scrolling
-        easing: 0.09, // Adjust the easing amount
-        damping: 0.9, // Adjust the damping amount
-    });
-});
-
-//trying
-
 import img from "./data.js";
 
 function shuffleArray(array) {
