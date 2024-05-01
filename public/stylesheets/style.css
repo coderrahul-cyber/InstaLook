@@ -1,0 +1,10 @@
+img{
+    image-rendering: optimizeQuality;
+}
+
+.right::-webkit-scrollbar{
+    display: none;
+}
+.stories::-webkit-scrollbar{
+    display: none;
+}

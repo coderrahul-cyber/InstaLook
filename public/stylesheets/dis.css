@@ -1,0 +1,7 @@
+.right img{
+    image-rendering: optimizeQuality;
+}
+
+.right::-webkit-scrollbar{
+display: none;
+}
