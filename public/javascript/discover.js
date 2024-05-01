@@ -13,6 +13,7 @@ function shuffleArray(array) {
 (function randomData() {
     let dat = "";
     let currentIndex = 0;
+    
     const shuffledImages = shuffleArray(img);
 
     for (let i = 0; i < img.length * 10; i++) {
@@ -139,18 +140,4 @@ det2.forEach((val) => {
     });
 });
 
-/* <div class="random relative bg-blue-500 w-[calc(33.33% - 0.6rem)] border-2 border-collapse border-r-4  border-black h-[350px] overflow-hidden">
-<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D"
-class="w-full z-10 absolute  h-full object-cover object-center" alt="">
 
-<div class="det z-0  absolute w-full h-full flex gap-[20px] justify-center items-center bg-zinc-500/50 " >
-    <div class="hea  w-max gap-[5px] text-white  flex">
-        <i class="ri-heart-3-fill  text-3xl"></i><span class="text-xl font-light">0</span>
-
-    </div>
-    <div class="comm  w-max gap-[5px] text-white  flex">
-        <i class="ri-chat-3-fill text-3xl "></i><span class="text-xl font-light ml-2">0</span>
-
-    </div>
-</div>
-</div> */
