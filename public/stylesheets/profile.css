@@ -1,0 +1,18 @@
+/* .upperHalf{
+    position: relative;
+    /* background-color: aqua; */
+.lowerhalf::-webkit-scrollbar{
+    display: none;
+}
+
+/* .upperHalf::after {
+    border-collapse: collapse;
+    content: '';
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    border-bottom: 2px solid rgba(88, 88, 88, 0.76);
+} */ 
