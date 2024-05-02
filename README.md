@@ -14,9 +14,9 @@ Notification Center: Stay in the loop with notifications for likes, comments, an
 
 ## 🛠️ Technology Used and To Be Used
 
-1Node.js: Powering the backend of our platform for efficient data handling and processing.
-2Express.js: Facilitating smooth routing and middleware capabilities for seamless communication.
-Passport.js: Ensuring secure authentication through various strategies such as OAuth, local, etc.
+*Node.js: Powering the backend of our platform for efficient data handling and processing.
+*Express.js: Facilitating smooth routing and middleware capabilities for seamless communication.
+*Passport.js: Ensuring secure authentication through various strategies such as OAuth, local, etc.
 Session Management: Maintaining user sessions for a personalized browsing experience.
 MongoDB: Storing and managing our application's data in a flexible, scalable NoSQL database.
 Tailwind CSS: Crafting beautiful and responsive user interfaces with minimal effort.
