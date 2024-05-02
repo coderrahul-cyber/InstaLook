@@ -23,7 +23,7 @@ Tailwind CSS: Crafting beautiful and responsive user interfaces with minimal eff
 React.js (Future): Enhancing user experience with a dynamic and interactive frontend.
 GraphQL (Future): Optimizing data fetching and communication between the client and server.
 Docker (Future): Containerizing our application for easy deployment and scalability.
-### (note not sure about using react , graph, and Docker as I don ' know how to use them)
+# (note not sure about using react, graph, and Docker as I do ' know how to use them)
 
 
 ## 🤝 Contributions Needed
