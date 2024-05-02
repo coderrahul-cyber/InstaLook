@@ -38,7 +38,7 @@ Enhancing user experience with a dynamic and interactive front end.
 Optimizing data fetching and communication between the client and server.
 ## Docker (Future):
 Containerizing our application for easy deployment and scalability.
-## (note not sure about using React, graph, and Docker as I do 'not know how to use them, if you know you can add them.)
+ (note not sure about using React, graph, and Docker as I do 'not know how to use them, if you know you can add them.)
 
 
 # 🤝 Contributions Needed
