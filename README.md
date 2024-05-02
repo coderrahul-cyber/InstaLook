@@ -23,14 +23,14 @@ Tailwind CSS: Crafting beautiful and responsive user interfaces with minimal eff
 React.js (Future): Enhancing user experience with a dynamic and interactive frontend.
 GraphQL (Future): Optimizing data fetching and communication between the client and server.
 Docker (Future): Containerizing our application for easy deployment and scalability.
-(note not sure about using the react , graph and Docker as i don ' t how to use it )
+### (note not sure about using react , graph, and Docker as I don ' know how to use them)
 
 
-##🤝 Contributions Needed
+## 🤝 Contributions Needed
 
-We're constantly striving to enhance InstaLook and welcome contributions from developers like you! Whether it's fixing bugs, adding new features, or optimizing performance, your contributions are valuable in making InstaLook the best it can be. Feel free to fork the repository and submit pull requests!
+We constantly strive to enhance InstaLook and welcome contributions from developers like you! Whether it's fixing bugs, adding new features, or optimizing performance, your contributions are valuable in making InstaLook the best it can be. Feel free to fork the repository and submit pull requests!
 
-##🔗 Get Started
+## 🔗 Get Started
 
 Ready to explore the world of InstaLook? Clone the repository and follow the setup instructions in our documentation to get up and running in no time!
 
