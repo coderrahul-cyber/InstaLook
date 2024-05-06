@@ -6,6 +6,7 @@ const last = document.querySelector(".last");
 const ser = document.querySelector(".seee");
 const insta = document.querySelector(".logo img");
 
+
 let isChanged = false;
 
 function changesAfterClick() {
