@@ -13,7 +13,7 @@
     <title>Feed</title>
 </head>
 <body>
-    <main class="bg-black w-screen h-screen flex ">
+    <main class="bg-black relative w-screen h-screen flex ">
 
         <div class="left overflow-hidden  relative flex flex-col ml-[10px] px-3 s py-7  h-screen text-white w-[20%] border-r-[1px] border-gray-400/35 ">
             
@@ -174,6 +174,58 @@
 
 
          </div>
+
+         <div class="addB fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white -z-10 w-[35vw] h-[80vh] overflow-hidden rounded-lg bg-[#262626]">
+
+
+            <div class="headP px-2 flex items-center justify-between border-gray-400/35  border-b-[1.5px] ">
+                <img class="backB hidden invert " src="../public/img/svg/back.svg" alt="">
+                <h1 class="font-semibold text-center w-full headA p-2 ">Create new post</h1>
+                <h2 class="next hidden capitalize text-blue-400 hover:cursor-pointer ">next</h2>
+
+            </div>
+
+
+            <form action="" class="flex flex-col gap-5 justify-center items-center h-full pb-[100px]">
+                <label for="fileInput" class="block">
+                    <img src="../public/img/svg/photo.svg" class="invert" alt="">
+                </label>
+                <p class="block font-semibold text-xl tracking-tight">Drag photos and videos here</p>
+                <input type="file" name="fileu" id="fileInput" class="input-file hidden">
+                <input type="button" id="inputb" value="Select From computer" class="bg-[#1877F2] rounded-lg hover:bg-blue-600 p-2 block">
+            </form>
+
+            <div class="imageVP z-10  absolute h-full hidden w-full bg-red-400">
+
+                <div class="imageS h-full  w-full bg-blue-500 "><img src="" class=" selected-image h-full w-full object-cover object-center" alt="image">
+                </div>
+
+                
+
+
+             </div>
+
+             <div class="captionP  absolute z-0 w-full h-full ">
+                  <div class="section h-full flex">
+                    <img class="capI w-[40vw] mr-1 h-full object-cover object-center" src="" alt="">
+                    <div class="cpation ">
+                        <div class="userin my-6 mx-4 flex gap-2">
+                             <img src="../public/img/p/428076736_1056279748962087_2851713635285337726_n.jpg" class="max-w-[2vw] max-h-[2vw] rounded-full" alt="">
+                            <div class="username font-semibold">selenagomez</div>
+
+                        </div>
+
+                       <textarea class="bg-transparent outline-none border-none w-[15vw] min-h-16 resize-none" placeholder="Enter your caption" ></textarea>
+                        
+                    </div>
+                  </div>
+             </div>
+
+            </div>
+
+            
+      </div>
+
 
 
 
@@ -410,5 +462,7 @@
     </main>
     
     <script src="../public/javascript/search.js"></script>
+    <script src="../public/javascript/add.js"></script>
+
 </body>
 </html>
