@@ -75,6 +75,8 @@ nextb.addEventListener('click', () => {
         document.querySelector(".backB").style.display = "";
             nextb.innerText = "Next";
             form.style.display = "" ;
+        addP.style.width = "";
+
         }, 3000);
         f = 0  ;
     }
