@@ -52,5 +52,12 @@ function changesAfterClick() {
 sbtn.addEventListener("click", () => {
     changesAfterClick();
 });
+let clear = document.querySelector(".clear");
+let inputA = document.querySelector(".inputA");
+
+clear.addEventListener("click", () => {
+    console.log("clicked at clear");
+    inputA.value = '';
+});
 
 
