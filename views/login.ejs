@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/output.css" >
-    <link rel="shortcut icon" href="../public/img/default/download.png" type="image/x-icon">
-    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="../img/default/download.png" type="image/x-icon">
+    <link rel="stylesheet" href="../stylesheets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <title>Login</title>
 </head>
@@ -15,8 +15,8 @@
 
         <div class="imagePart ">
             <div class="scrennS ">
-                <img src="../public/img/default/home-phones.png" alt="">
-                <img src="../public/img/default/screenshot1.png" class=" image-se fixed top-[18.6%]  left-[37.5%]" alt="">
+                <img src="../img/default/home-phones.png" alt="">
+                <img src="../img/default/screenshot1.png" class=" image-se fixed top-[18.6%]  left-[37.5%]" alt="">
           
             </div>
 
@@ -26,13 +26,13 @@
             <div class="upperH border-[1px] gap-8 p-10  flex flex-col items-center  border-gray-500/25">
 
                 <div class="logo">
-                   <img src="../public/img/default/logo.png" class="invert w-[8.8em]" alt="">
+                   <img src="../img/default/logo.png" class="invert w-[8.8em]" alt="">
                 </div>
                 <form action="./feed.html" class="border-b-[1.2px] pb-5 rounded-lg border-gray-500/25">
    
-                   <input type="text" name="Username" placeholder="Username" class="w-full text-sm outline-none border-[0.8px] bg-slate-200/55  rounded-sm p-1 border-gray-500/55 my-2" >
-                   <input type="password" name="password" placeholder="password" class="w-full text-sm outline-none border-[0.8px] bg-slate-200/55  rounded-sm p-1 border-gray-500/55 my-2">
-                   <input type="submit" value="login" class="w-full bg-blue-400 text-white hover:cursor-pointer font-semibold text-sm p-2 rounded-md">
+                   <input type="text" name="Username" id="username" placeholder="Username" class="w-full text-sm outline-none border-[0.8px] bg-slate-200/55  rounded-sm p-1 border-gray-500/55 my-2" >
+                   <input type="password" name="password" id="password" placeholder="password" class="w-full text-sm outline-none border-[0.8px] bg-slate-200/55  rounded-sm p-1 border-gray-500/55 my-2">
+                   <input type="submit" value="login" id="submit" disabled class="w-full bg-blue-400 text-white hover:cursor-pointer font-semibold text-sm p-2 rounded-md">
    
                 </form>
    
@@ -41,7 +41,7 @@
                 <div class="other">
    
                     
-                                 <span><img src="../public/img/default/vecteezy_icone-facebook-png_16716481.png" class=" inline-block max-w-[1vw]" alt=""></span>
+                                 <span><img src="../img/default/vecteezy_icone-facebook-png_16716481.png" class=" inline-block max-w-[1vw]" alt=""></span>
                                  <span class="_ab37">Log in with Facebook</span>
    
                 </div>
@@ -60,7 +60,8 @@
 
     </main>
 
-    <script src="../public/javascript/login.js"></script>
+    <script src="../javascript/login.js"></script>
+
 
 </body>
 </html>

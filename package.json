@@ -5,17 +5,20 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
     "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.4.3"
-  },
   "dependencies": {
-    "autoprefixer": "^10.4.19",
-    "postcss-cli": "^11.0.0"
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.5"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
   }
 }
