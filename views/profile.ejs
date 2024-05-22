@@ -1,109 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="../public/img/default/download.png" type="image/x-icon">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+<%- include('partials/header.ejs') %>
 <title>profile</title>
 </head>
 <body>
     <main class="bg-black w-screen h-screen flex">
 
-        <div class="left flex flex-col ml-[10px] px-3 py-7  h-screen text-white w-[20%] border-r-[1px] border-gray-400/35 ">
-            
-            
-
-            <div class="logo flex flex-col gap-2  ">
-
-                <img src="../public/img/default/logo.png" class="w-[100px] mb-[10px] ml-2  hover:cursor-pointer pt-[10px]" alt="">
-                
-                <div class="hom  flex gap-5 items-center w-auto hover:bg-gray-50/10  overflow-hidden font-thin   py-3 px-2 rounded-lg hover:cursor-pointer ">
-
-                    <img src="../public/img/default/home.png" class="invert w-7 hover:cursor-pointer" alt="">
-                    <span class="font-semibold">Home</span>
+        <%- include('partials/leftSide') %>
 
 
-                </div>
-
-                <div class="search overflow-hidden font-thin flex gap-5 items-center w-auto hover:bg-gray-50/10  py-3 px-2 rounded-lg hover:cursor-pointer">
-
-                    <img src="../public/img/default/search-7.png" class="invert w-7 hover:cursor-pointer" alt="">
-                    <span class="font-semibold">Search</span>
-
-
-                </div>
-
-                <div class="discover overflow-hidden font-thin flex gap-5 items-center w-auto hover:bg-gray-50/10  py-3 px-2 rounded-lg hover:cursor-pointer">
-
-                    <img src="../public/img/default/compass-point-7.png" class="invert w-7 hover:cursor-pointer" alt="">
-                    <span class="font-semibold">Explore</span>
-
-
-                </div>
-
-                <div class="reel overflow-hidden font-thin flex gap-5 items-center w-auto hover:bg-gray-50/10  py-3 px-2 rounded-lg hover:cursor-pointer">
-                    
-                    <img src="../public/img/default/instagram-reels-icon.png" class="invert w-6 hover:cursor-pointer" alt="">
-                    <span class="font-semibold hover:cursor-pointer">Reels</span>
-
-                </div>
-
-                <div class="messanger overflow-hidden font-thin flex gap-5 items-center w-auto hover:bg-gray-50/10  py-3 px-2 rounded-lg hover:cursor-pointer">
-
-                    <img src="../public/img/default/messenger_1617469.png" class="invert w-6 hover:cursor-pointer" alt="">
-                    <span class="font-semibold">Messages</span>
-
-
-                </div>
-
-                <div class="noti overflow-hidden font-thin flex gap-5 items-center w-auto hover:bg-gray-50/10  py-3 px-2 rounded-lg hover:cursor-pointer">
-
-                    <img src="../public/img/default/heart-7.png" class="invert w-6 hover:cursor-pointer " alt="">
-                    <span class="font-semibold">Notification</span>
-
-                </div>
-
-                <div class="add overflow-hidden font-thin flex gap-5 items-center w-auto hover:bg-gray-50/10  py-3 px-2 hover:cursor-pointer">
-
-                    <img src="../public/img/default/plus-sign.png" class="invert w-6 hover:cursor-pointer" alt="">
-                    <span class="font-semibold">Create</span>
-
-                </div>
-
-                <div class="profile overflow-hidden font-thin flex gap-5 items-center w-auto hover:bg-gray-50/10  py-3 px-2 hover:cursor-pointer">
-
-                    <div class="pro w-[1.5vmax] h-[1.5vmax] bg-white rounded-full overflow-hidden hover:cursor-pointer "> <img src="../public/img/default/blank-profile-picture-973460_640.webp" class="w-full h-full" alt=""></div>
-                    <span class="font-semibold">Profile</span>
-
-                </div>
-
-               
-            </div>
-            <div class="last  flex justify-end flex-col gap-2 relative h-full mb-[10px] ">
-
-                <div class="thread  flex items-center w-[105%] hover:bg-gray-50/10  py-3 px-2 hover:cursor-pointer  gap-1 absolute left-[-2.5%] bottom-10 ">
-
-                    <img src="../public/img/default/threads-app-icon-removebg-preview.png" class="w-10 hover:cursor-pointer " alt="" srcset="">
-                    <span class="font-semibold">Thread</span>
-
-
-                </div>
-
-                <div class="more flex items-center w-auto hover:bg-gray-50/10  py-3 px-2 hover:cursor-pointer  gap-5">
-
-                    <img src="../public/img/default/three-horizontal-lines-icon.png" class="invert hover:cursor-pointer w-5" alt="">
-                    <span class="font-semibold">More</span>
-
-
-                </div>
-            </div>
-           
-        </div>
+       
 
         <div class="right w-[80%] h-screen flex flex-col items-center">
 
@@ -114,7 +18,7 @@
                     
                     <div class="dp w-[20%] h-[20%] mt-[25px] rounded-full overflow-hidden">
      
-                        <img src="../public/img/default/blank-profile-picture-973460_640.webp" class="w-max h-max object-cover object-center"  alt="">
+                        <img src="../img/default/default.png" class="w-max h-max object-cover object-center"  alt="">
                       
                       </div>
                       <div class="mainP text-white  w-[85%] p-[8px] flex flex-col gap-[10px]">
@@ -124,7 +28,7 @@
                               <h1 class="inline-block text-lg font-semibold">its_rahulsamant</h1>
                               <button class=" bg-gray-500/65 rounded-lg  p-[8px] font-semibold text-sm">Edit profile</button>
                               <button class=" bg-gray-500/65 rounded-lg  p-[8px] text-sm font-semibold">View archive</button>
-                              <img src="../public/img/svg/setting.svg" class="invert hover:cursor-pointer" alt="">
+                              <img src="../img/svg/setting.svg" class="invert hover:cursor-pointer" alt="">
       
                            </div>
         
@@ -160,7 +64,7 @@
 
                 <div class="highlights w-max flex flex-col items-center gap-[5px]  mt-[15px] h-max">
                     <div class="high w-[80px] h-[80px] border-[1.2px] border-gray-500/80 rounded-full flex justify-center items-center p-0 ">
-                      <img src="../public/img/svg/add.svg" class="opacity-35 invert hover:opacity-100" alt="">
+                      <img src="../img/svg/add.svg" class="opacity-35 invert hover:opacity-100" alt="">
                     </div>
                     <p class=" text-white w-max capitalize text-sm  ">new</p>
                 </div>
@@ -173,16 +77,16 @@
                 <div class="headingg flex absolute top-0 justify-center gap-[50px]  w-[100%]">
 
                     <div class="post hover:cursor-pointer pt-[13px] hover:border-t-[1.5px] border-collapse border-white">
-                             <img src="../public/img/svg/grid.svg" class="invert inline-block" alt="">
+                             <img src="../img/svg/grid.svg" class="invert inline-block" alt="">
                              <span class="text-gray-400/55">Post</span>
                     </div>
                     <div class="savedIm hover:cursor-pointer pt-[13px] hover:border-t-[1.5px] border-collapse border-white">
     
-                        <img src="../public/img/svg/bookmark.svg" class="invert inline-block" alt="">
+                        <img src="../img/svg/bookmark.svg" class="invert inline-block" alt="">
                              <span class="text-gray-400/55">Saved</span>
                     </div>
                     <div class="tagged pt-[13px] hover:cursor-pointer hover:border-t-[1.5px] border-collapse border-white">
-                        <img src="../public/img/svg/tag.svg" class="invert inline-block" alt="">
+                        <img src="../img/svg/tag.svg" class="invert inline-block" alt="">
                              <span class="text-gray-400/55">Tagged</span>
                     </div>
 

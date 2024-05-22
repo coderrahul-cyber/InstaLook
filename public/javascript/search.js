@@ -12,7 +12,7 @@ let isChanged = false;
 function changesAfterClick() {
     if (!isChanged) {
         console.log("clicked");
-        insta.src = "../public/img/default/download.png";
+        insta.src = "../img/default/download.png";
         insta.style.width = "30px";
         icon.forEach((icon) => {
             icon.style.display = "none";
@@ -30,7 +30,7 @@ function changesAfterClick() {
         isChanged = true;
     } else {
         // Restore default styles
-        insta.src = "../public/img/default/logo.png"; 
+        insta.src = "../img/default/logo.png"; 
         icon.forEach((icon) => {
             icon.style.display = "block";
         });

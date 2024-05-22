@@ -7,6 +7,7 @@ const path = require('path');
 
 const port = process.env.PORT ;
 
+const loggedInUser = require('./routes/loginedUser');
 const indexRoute = require('./routes/inital.route');
 
 
@@ -18,6 +19,7 @@ app.set("view engine" , "ejs");
 app.use(express.static(path.join(__dirname , "public")));
 
 app.use("/" , indexRoute);
+app.use("/user", loggedInUser);
 
 
 
