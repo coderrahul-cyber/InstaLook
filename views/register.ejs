@@ -8,8 +8,9 @@
             <div class="logo">
                 <img src="../img/default/logo.png" class="invert w-[8.8em]" alt="">
              </div>
+            <%- include('partials/flasherror') %>
 
-             <form action="" class="mt-5">
+             <form action="/newUser" method="post" class="mt-5">
 
                 <input type="email" id="email" name="email" placeholder="email" class="w-full outline-none border-[0.8px] text-sm bg-gray-200/55 h-8 rounded-sm p-1 border-gray-500/55 mb-2" >
                 <input type="text" id="name" name="name" placeholder="Full name" class="w-full outline-none border-[0.8px] text-sm bg-gray-200/55 h-8 rounded-sm p-1 border-gray-500/55 mb-2" >
@@ -24,7 +25,7 @@
 
         <div class="lowerH border-[1px] rounded-lg flex items-center p-5  border-gray-500/25 my-4">
 
-            <a href="./login.html" class="text-black w-full text-center hover:cursor-pointer hover:text-gray-600">Already have a account ? <span class="text-blue-500 font-semibold">Login </span></a>
+            <a href="/" class="text-black w-full text-center hover:cursor-pointer hover:text-gray-600">Already have a account ? <span class="text-blue-500 font-semibold">Login </span></a>
 
         </div>
 

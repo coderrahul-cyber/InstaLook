@@ -1,0 +1,22 @@
+<%- include ('partials/header.ejs') %>
+
+    <title>Sorry not allowed</title>
+</head>
+<body>
+    <main class="bg-[#343a40] w-screen h-screen flex-col flex justify-center items-center">
+                <p class="text-xl  tracking-tight">Access denied, please login first.Redirecting in....<span id="countdown">3</span></p>
+            
+    </main>
+    <script>
+        let countdown = 3 ;
+        const invertval = setInterval(()=>{
+            countdown--;
+            document.querySelector("#countdown").innerHTML = countdown ;
+            if(countdown <= 0){
+                clearInterval(invertval);
+                window.location.href = '/';
+            }
+        },1000);
+     </script>
+</body>
+</html>
