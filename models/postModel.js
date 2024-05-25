@@ -18,7 +18,13 @@ const Postschema = mongoose.Schema({
         type : String ,
         default : ""
     },
-
+    
+    data : {
+        type : Buffer
+    },
+    content_type : {
+    type : String
+    }
 });
 
 module.exports = mongoose.model("UpostData" , Postschema );

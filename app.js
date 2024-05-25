@@ -12,6 +12,8 @@ const port = process.env.PORT ;
 
 const loggedInUser = require('./routes/loginedUser');
 const indexRoute = require('./routes/inital.route');
+const uploadRoute = require('./routes/uploads.route');
+
 const { error } = require("console");
 
 //session setup for the flash
@@ -22,6 +24,7 @@ app.use(session({
 }));
 
 app.use(flash());
+
 // middleware for the flash
 app.use((req, res, next) => {
     res.locals.error_msg = req.flash('error_msg');
@@ -30,7 +33,7 @@ app.use((req, res, next) => {
 });
 
 // verfiying the user for the protected routes
-const verifyToken = (req, res, next)=>{
+const isloggedIn = (req, res, next)=>{
     const token = req.cookies.token ;
     // console.log(token);
     if(!token){
@@ -55,7 +58,9 @@ app.set("view engine" , "ejs");
 app.use(express.static(path.join(__dirname , "public")));
 
 app.use("/" , indexRoute);
-app.use("/user", verifyToken, loggedInUser);
+app.use("/user", isloggedIn, loggedInUser);
+app.use("/upload", isloggedIn, uploadRoute);
+
 
 // error handling
 app.use((err, req, res, next) => {
@@ -63,11 +68,6 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!')
   })
   
-
-
-
-
-
 app.listen(port , ()=>{
     console.log(`App is running on http://localhost:${port}`);
 })

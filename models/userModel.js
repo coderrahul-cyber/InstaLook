@@ -27,7 +27,7 @@ const userSchema = mongoose.Schema({
     },
     dp : {
         type : String ,
-        default : "./public/img/default/default.png"
+        default : "./img/default/default.png"
     },
     posts: [
         {

@@ -8,3 +8,9 @@ img{
 .stories::-webkit-scrollbar{
     display: none;
 }
+.highlights::-webkit-scrollbar{
+    display: none;
+}
+.lowerhalf::-webkit-scrollbar{
+    display:none;
+}

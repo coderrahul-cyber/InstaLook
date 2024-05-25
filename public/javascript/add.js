@@ -5,6 +5,10 @@ const form = document.querySelector("form");
 const viewP = document.querySelector('.imageVP');
 const addbu = document.querySelector(".add");
 const addP = document.querySelector(".addB");
+const hidenSubButton = document.querySelector("#hidden_subbutton");
+const captionPart = document.querySelector("#captionPart");
+const captionArea = document.querySelector("#textarea");
+
 const selectedIm = document.querySelector('.selected-image') ;
 
 
@@ -12,7 +16,8 @@ const selectedIm = document.querySelector('.selected-image') ;
 let flag= 0;
 addbu.addEventListener("click" , ()=>{
     if(flag == 0 || addP.style.zIndex== -5){
-        addP.style.zIndex = 10;
+        addP.style.zIndex = 50;
+        console.log("clicked")
         flag=1;
     }else{
         addP.style.zIndex =-5;
@@ -57,7 +62,7 @@ const cpaI = document.querySelector(".capI");
 
 let f =0 ;
 
-nextb.addEventListener('click', () => {
+nextb.addEventListener('click', async () => {
     if (f  == 0) {
         imageE(cpaI);
         viewP.style.display = "none";
@@ -68,7 +73,7 @@ nextb.addEventListener('click', () => {
         document.querySelector(".headA").innerText = "sharing..";
         document.querySelector(".backB").style.display = "none";
         nextb.style.display = "none";
-        setTimeout(() => {
+      await  setTimeout(() => {
             addP.style.zIndex = -5;
             captionP.style.zIndex = 0;
         document.querySelector(".headA").innerText = "Create new post";
@@ -76,7 +81,10 @@ nextb.addEventListener('click', () => {
             nextb.innerText = "Next";
             form.style.display = "" ;
         addP.style.width = "";
-
+        // console.log(captionArea.value);
+        captionPart.value = captionArea.value ;
+        // console.log(captionPart)
+        hidenSubButton.click();
         }, 3000);
         f = 0  ;
     }
@@ -96,3 +104,4 @@ bacButton.addEventListener("click",()=>{
     form.style.display="";
     viewP.style.display = ""  
 })
+

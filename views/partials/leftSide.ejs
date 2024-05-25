@@ -180,18 +180,20 @@
     <div class="headP px-2 flex items-center justify-between border-gray-400/35  border-b-[1.5px] ">
         <img class="backB hidden invert " src="../img/svg/back.svg" alt="">
         <h1 class="font-semibold text-center w-full headA p-2 ">Create new post</h1>
-        <h2 class="next hidden capitalize text-blue-400 hover:cursor-pointer ">next</h2>
+        <button class="next hidden capitalize text-blue-400 hover:cursor-pointer ">next</button>
 
     </div>
 
 
-    <form action="" class="flex flex-col gap-5 justify-center items-center h-full pb-[100px]">
+    <form action="/upload" method="post" enctype="multipart/form-data" class="flex flex-col gap-5 justify-center items-center h-full pb-[100px]">
         <label for="fileInput" class="block">
             <img src="../img/svg/photo.svg" class="invert" alt="">
         </label>
         <p class="block font-semibold text-xl tracking-tight">Drag photos and videos here</p>
-        <input type="file" name="fileu" id="fileInput" class="input-file hidden">
+        <input type="file" name="file" id="fileInput" class="input-file hidden">
+        <input type="text" class="hidden" name="caption" id="captionPart">
         <input type="button" id="inputb" value="Select From computer" class="bg-[#1877F2] rounded-lg hover:bg-blue-600 p-2 block">
+        <input type="submit"  class="hidden" id="hidden_subbutton">
     </form>
 
     <div class="imageVP z-10  absolute h-full hidden w-full bg-red-400">
@@ -214,7 +216,7 @@
 
                 </div>
 
-               <textarea class="bg-transparent outline-none border-none w-[15vw] min-h-16 resize-none" placeholder="Enter your caption" ></textarea>
+               <textarea class="bg-transparent outline-none border-none w-[15vw] min-h-16 resize-none" id="textarea" placeholder="Enter your caption" ></textarea>
                 
             </div>
           </div>
