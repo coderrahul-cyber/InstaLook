@@ -26,8 +26,11 @@ const userSchema = mongoose.Schema({
         required : [true , "Please Enter the password"]
     },
     dp : {
-        type : String ,
-        default : "./img/default/default.png"
+        type :Buffer
+    },
+    content_type : {
+       type : String,
+       default : ""
     },
     posts: [
         {

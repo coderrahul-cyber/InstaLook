@@ -11,19 +11,26 @@
             <div class="upperHalf pt-[25px]  pb-[50px] border-b-2 border-collapse border-gray-400/50 w-[50%] h-max">
 
 
-                <div class="detailPart  flex items-center   gap-[40px]">
+                <div class="detailPart w-full gap-10  flex items-center ">
                     
-                    <div class="dp max-w-[110px] max-h-[110px] ml-[20px] mt-[25px] rounded-full overflow-hidden">
+                    <div class="dp w-28 h-28 ml-[20px] shrink-0 mt-[25px] rounded-full overflow-hidden">
      
-                        <img src="<%= user.dp %>" class="w-max h-max object-cover object-center"  alt="">
-                      
-                      </div>
-                      <div class="mainP text-white  w-[85%] p-[8px] flex flex-col gap-[10px]">
+                        <% if (user.dp) { %>
+                            <img src="data:<%= contentType %>;base64,<%= base64Data %>" class="w-full h-full object-cover object-center" alt="User Image">
+                        <% } else { %>
+                            <img src="/img/default/default.png" class="w-full h-full object-cover object-center " alt="Default User Image">
+                        <% } %>                      
+                    </div>
+
+
+                    <div class="mainP text-white  w-[85%] p-[8px] flex flex-col gap-[10px]">
                         
 
                           <div class="nameP  mt-[25px] ml-[5%] flex items-center h-max gap-[15px] ">
                               <h1 class="inline-block text-lg font-semibold"><%=user.username%></h1>
-                              <button class=" bg-gray-500/65 rounded-lg  p-[8px] font-semibold text-sm">Edit profile</button>
+                              <a href="/user/edit">
+                                  <button class=" bg-gray-500/65 rounded-lg  p-[8px] font-semibold text-sm" >Edit profile</button>
+                              </a>
                               <button class=" bg-gray-500/65 rounded-lg  p-[8px] text-sm font-semibold">View archive</button>
                               <img src="../img/svg/setting.svg" class="invert hover:cursor-pointer" alt="">
       
@@ -53,7 +60,7 @@
                         </div>
 
 
-                      </div>
+                    </div>
     
         
                 </div>
@@ -97,7 +104,7 @@
                     <div class="posts pb-[100px] w-full h-max  grid  grid-cols-3 ">
                         <% user.posts.reverse().forEach((post) => { %>
                             <div class="post border-2 border-black border-collapse w-[calc(33.33% - 0.6rem)] h-[300px]">
-                                <img src="data:<%= post.content_type %>;base64,<%= post.base64Data %>" class="object-cover w-full h-full object-center" alt="">
+                                <img src="data:<%= post.content_type %>;base64,<%= post.base64Datas %>" class="object-cover w-full h-full object-center" alt="">
                             </div>
                             
                         <% }) %>

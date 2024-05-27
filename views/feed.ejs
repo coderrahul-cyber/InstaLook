@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="../img/default/download.png" type="image/x-icon">
-    <link rel="stylesheet" href="../stylesheets/style.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-    <title>Feed</title>
+<%- include ('partials/header.ejs') %>
+
+<title>Feed</title>
 </head>
 <body>
-    <main class="bg-black relative w-screen h-screen flex ">
+    <main class="bg-black relative w-screen h-screen flex  ">
 
-             <%- include('partials/leftSide') %>
-
-
-
-
-
+        <%- include('partials/leftSide') %>
+      
 
         <div class="right w-[80%] gap-[10px] relative flex flex-row ml-[170px] overflow-auto">
 
@@ -253,4 +239,10 @@
 
     </main>
     
-    <%- include('partials/footer') %>
+    <script src="../javascript/search.js"></script>
+    <script src="../javascript/add.js"></script>
+    
+    
+    
+    </body>
+    </html>

@@ -75,7 +75,16 @@
 
             <div class="profile rounded-lg  icon  overflow-hidden font-thin flex gap-5 items-center w-auto hover:bg-gray-50/10  py-3 px-2 hover:cursor-pointer">
 
-                <div class="pro  bg-white rounded-full overflow-hidden hover:cursor-pointer "> <img src="../img/default/default.png" class=" w-[30px] h-[30px] rounded-full" alt=""></div>
+                <div class="pro shrink-0 bg-white w-[35px] h-[35px] rounded-full overflow-hidden hover:cursor-pointer ">
+                    
+                    <% if (user.dp) { %>
+                        <img src="data:<%= contentType %>;base64,<%= base64Data %>" class="w-full h-full  object-cover object-center" alt="User Image">
+                    <% } else { %>
+                        <img src="/img/default/default.png" class="w-full h-full object-cover object-center " alt="Default User Image">
+                    <% } %>
+
+                </div>
+                        
                 <span class="font-semibold">Profile</span>
 
             </div>
@@ -96,13 +105,14 @@
 
         </div>
 
-        <div class="more icon rounded-lg  flex items-center w-auto hover:bg-gray-50/10  py-3 px-2 hover:cursor-pointer  gap-5">
+        
 
-            <img src="../img/default/three-horizontal-lines-icon.png" class="invert hover:cursor-pointer w-5" alt="">
-            <span class="font-semibold">More</span>
+            <a href="/logout">
+
+                <button class="bg-red-600  mt-8 w-[100%] font-semibold text-sm px-8 h-10 rounded-lg">logout</button>
+            </a>
 
 
-        </div>
     </div>
 
  

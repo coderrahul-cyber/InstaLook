@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+<title>Edit profile • Instagram</title>
+</head>
+<body>
+
+    <main class="w-screen h-screen flex bg-black">
+        <%- include('partials/leftSide') %>
+
+        <div class="rightSide  text-white w-full flex justify-center h-full">
+          
+            <div class="editPart h-full bg-black  w-[35vw] py-8 px-2">
+                <h1 class="font-semibold text-2xl tracking-tighter mb-8">Edit Profile..</h1>
+                <div class="dpPartt mb-8">
+
+                    <form action="/upload/updatedp" method="post" enctype="multipart/form-data" class="w-full bg-zinc-700 min-h-24 rounded-lg p-4 flex items-center  justify-between" >
+                       
+                           <div class="detailAA flex items-center gap-10 ">
+                            <%if(user.dp){%>
+                                <img src="data:<%= contentType %>;base64,<%=base64Data%>" class="h-16 w-16 rounded-full object-cover object-center" alt="">
+                            <%}else{%>
+                                <img src="/img/default/default.png" class="h-16 w-16 rounded-full object-cover object-center" alt="">
+                            <%}%>
+
+                              <div class="name">
+                                  <h3 class="font-semibold ">Selenagomez</h3>
+                                  <h5 class="text-gray-400/80 tracking-tighter text-sm">Selena Gomez</h5>
+                              </div>
+                           </div>
+                           <input type="file" name="file" id="filed" class="hidden">
+
+                        <button type="button" id="button1" class="p-2 border-none text-sm  rounded-xl font-semibold  bg-blue-500 h-10">Change photo</button>
+                        <button type="submit" id="submissionButton" class="hidden">change</button>
+
+                    </form>
+
+                </div>
+
+                <div class="restPart relative">
+                    <form action="" class="flex-col flex  gap-2">
+                        
+                        <label for="bio" class="font-semibold text-xl">Bio</label>
+                        <textarea name="bio" id="bioarea" class="resize-none outline-none border-[1px] rounded-lg mb-2 border-gray-100/50 bg-transparent min-h-10 p-4" maxlength="150" placeholder="Bio..."></textarea>
+
+                        <label for="name" class="font-semibold text-xl">fullname</label>
+                        <input type="text" class="border-[1px] rounded-md border-gray-100/50 bg-transparent mb-3 h-10 px-1 outline-none" maxlength="20" name="name" placeholder="name">
+                        
+                        
+                        <label for="username" class="font-semibold text-xl">username</label>
+                        <input type="text" class="border-[1px] rounded-md border-gray-100/50 bg-transparent h-10 px-1 outline-none" minlength="2" maxlength="20" name="username" placeholder="Username">
+                        <button type="reset" class="bg-red-600  mt-8 w-[30%] font-semibold self-end text-sm px-8 h-10 rounded-lg">reset</button>
+                        <button id="hidesub" type="submit" class="hidden" ></button>
+                    </form>
+                    <button type="submit" id="button2" class="bg-blue-500 absolute right-0 mt-2 w-[30%] font-semibold text-sm px-8 h-10 rounded-lg">Submit</button>
+                    
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <script>
+        const file = document.querySelector("#filed");
+        const dpButton = document.querySelector("#button1");
+        const submissionButton = document.querySelector("#submissionButton");
+        const submmissonbutton2 = document.querySelector("#hidesub");
+        const subButton = document.querySelector("#button2");
+
+
+
+        dpButton.addEventListener("click" , ()=>{
+            file.click();
+        
+        });
+
+        file.addEventListener("change", () => {
+            if (file.files.length > 0) {
+           submissionButton.click();   
+           }
+        });
+        subButton.addEventListener("click" , ()=>{
+            submmissonbutton2.click();
+
+        });
+
+
+    
+    </script>
+
+</body>
+</html>

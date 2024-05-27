@@ -522,6 +522,9 @@ video {
 .left-\[37\.5\%\] {
   left: 37.5%;
 }
+.right-0 {
+  right: 0px;
+}
 .right-2 {
   right: 0.5rem;
 }
@@ -576,6 +579,12 @@ video {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
 .mb-\[10px\] {
   margin-bottom: 10px;
 }
@@ -615,8 +624,14 @@ video {
 .mr-\[30px\] {
   margin-right: 30px;
 }
+.mt-2 {
+  margin-top: 0.5rem;
+}
 .mt-5 {
   margin-top: 1.25rem;
+}
+.mt-8 {
+  margin-top: 2rem;
 }
 .mt-\[10px\] {
   margin-top: 10px;
@@ -654,6 +669,15 @@ video {
 .hidden {
   display: none;
 }
+.h-10 {
+  height: 2.5rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.h-28 {
+  height: 7rem;
+}
 .h-8 {
   height: 2rem;
 }
@@ -674,9 +698,6 @@ video {
 }
 .h-\[300px\] {
   height: 300px;
-}
-.h-\[30px\] {
-  height: 30px;
 }
 .h-\[35px\] {
   height: 35px;
@@ -709,17 +730,20 @@ video {
 .h-screen {
   height: 100vh;
 }
-.max-h-\[110px\] {
-  max-height: 110px;
-}
 .max-h-\[1350px\] {
   max-height: 1350px;
 }
 .max-h-\[2vw\] {
   max-height: 2vw;
 }
+.min-h-10 {
+  min-height: 2.5rem;
+}
 .min-h-16 {
   min-height: 4rem;
+}
+.min-h-24 {
+  min-height: 6rem;
 }
 .min-h-\[10vh\] {
   min-height: 10vh;
@@ -727,8 +751,11 @@ video {
 .w-10 {
   width: 2.5rem;
 }
-.w-5 {
-  width: 1.25rem;
+.w-16 {
+  width: 4rem;
+}
+.w-28 {
+  width: 7rem;
 }
 .w-6 {
   width: 1.5rem;
@@ -775,8 +802,8 @@ video {
 .w-\[2vmax\] {
   width: 2vmax;
 }
-.w-\[30px\] {
-  width: 30px;
+.w-\[30\%\] {
+  width: 30%;
 }
 .w-\[35px\] {
   width: 35px;
@@ -833,9 +860,6 @@ video {
 .max-w-\[1080px\] {
   max-width: 1080px;
 }
-.max-w-\[110px\] {
-  max-width: 110px;
-}
 .max-w-\[1vw\] {
   max-width: 1vw;
 }
@@ -849,6 +873,9 @@ video {
   max-width: 100%;
 }
 .flex-shrink-0 {
+  flex-shrink: 0;
+}
+.shrink-0 {
   flex-shrink: 0;
 }
 .border-collapse {
@@ -901,6 +928,9 @@ video {
 .gap-1 {
   gap: 0.25rem;
 }
+.gap-10 {
+  gap: 2.5rem;
+}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -916,9 +946,6 @@ video {
 .gap-\[15px\] {
   gap: 15px;
 }
-.gap-\[40px\] {
-  gap: 40px;
-}
 .gap-\[5px\] {
   gap: 5px;
 }
@@ -930,6 +957,9 @@ video {
 }
 .gap-y-56 {
   row-gap: 14rem;
+}
+.self-end {
+  align-self: flex-end;
 }
 .overflow-auto {
   overflow: auto;
@@ -957,6 +987,9 @@ video {
 }
 .rounded-sm {
   border-radius: 0.125rem;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 .border-2 {
   border-width: 2px;
@@ -1004,6 +1037,9 @@ video {
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+.border-gray-100\/50 {
+  border-color: rgb(243 244 246 / 0.5);
 }
 .border-gray-400\/35 {
   border-color: rgb(156 163 175 / 0.35);
@@ -1072,6 +1108,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
 .bg-slate-200\/55 {
   background-color: rgb(226 232 240 / 0.55);
 }
@@ -1084,6 +1124,10 @@ video {
 }
 .bg-white\/35 {
   background-color: rgb(255 255 255 / 0.35);
+}
+.bg-zinc-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
 .object-cover {
   -o-object-fit: cover;
@@ -1105,6 +1149,9 @@ video {
 .p-2 {
   padding: 0.5rem;
 }
+.p-4 {
+  padding: 1rem;
+}
 .p-5 {
   padding: 1.25rem;
 }
@@ -1120,6 +1167,10 @@ video {
 .p-\[8px\] {
   padding: 8px;
 }
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1127,6 +1178,10 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .px-\[13px\] {
   padding-left: 13px;
@@ -1151,6 +1206,10 @@ video {
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .py-\[10px\] {
   padding-top: 10px;
@@ -1252,6 +1311,9 @@ video {
 .tracking-tight {
   letter-spacing: -0.025em;
 }
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
 .tracking-wide {
   letter-spacing: 0.025em;
 }
@@ -1277,6 +1339,9 @@ video {
 }
 .text-gray-400\/55 {
   color: rgb(156 163 175 / 0.55);
+}
+.text-gray-400\/80 {
+  color: rgb(156 163 175 / 0.8);
 }
 .text-gray-500\/50 {
   color: rgb(107 114 128 / 0.5);
