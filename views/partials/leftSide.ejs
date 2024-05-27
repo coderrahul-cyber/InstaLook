@@ -77,7 +77,7 @@
 
                 <div class="pro shrink-0 bg-white w-[35px] h-[35px] rounded-full overflow-hidden hover:cursor-pointer ">
                     
-                    <% if (user.dp) { %>
+                    <% if (user && user.dp) { %>
                         <img src="data:<%= contentType %>;base64,<%= base64Data %>" class="w-full h-full  object-cover object-center" alt="User Image">
                     <% } else { %>
                         <img src="/img/default/default.png" class="w-full h-full object-cover object-center " alt="Default User Image">

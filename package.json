@@ -4,9 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "tailwind:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/styles.css"
+    
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "concurrently \"npm run tailwind:css\" \"nodemon app.js\"",
+      "tailwind:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/styles.css"
+    
+    
   },
   "keywords": [],
   "author": "",
@@ -28,6 +31,7 @@
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "dotenv": "^16.4.5"
   }
 }

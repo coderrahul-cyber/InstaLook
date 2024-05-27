@@ -7,23 +7,26 @@
         <%- include('partials/leftSide') %>
 
         <div class="rightSide  text-white w-full flex justify-center h-full">
+
           
             <div class="editPart h-full bg-black  w-[35vw] py-8 px-2">
+            <%- include('partials/flasherror') %>
+
                 <h1 class="font-semibold text-2xl tracking-tighter mb-8">Edit Profile..</h1>
                 <div class="dpPartt mb-8">
 
                     <form action="/upload/updatedp" method="post" enctype="multipart/form-data" class="w-full bg-zinc-700 min-h-24 rounded-lg p-4 flex items-center  justify-between" >
                        
                            <div class="detailAA flex items-center gap-10 ">
-                            <%if(user.dp){%>
+                            <%if(user && user.dp){%>
                                 <img src="data:<%= contentType %>;base64,<%=base64Data%>" class="h-16 w-16 rounded-full object-cover object-center" alt="">
                             <%}else{%>
                                 <img src="/img/default/default.png" class="h-16 w-16 rounded-full object-cover object-center" alt="">
                             <%}%>
 
                               <div class="name">
-                                  <h3 class="font-semibold ">Selenagomez</h3>
-                                  <h5 class="text-gray-400/80 tracking-tighter text-sm">Selena Gomez</h5>
+                                  <h3 class="font-semibold "><%= user.username %></h3>
+                                  <h5 class="text-gray-400/80 tracking-tighter text-sm"><%= user.fullName %></h5>
                               </div>
                            </div>
                            <input type="file" name="file" id="filed" class="hidden">
@@ -36,7 +39,7 @@
                 </div>
 
                 <div class="restPart relative">
-                    <form action="" class="flex-col flex  gap-2">
+                    <form action="/upload/detail" method="post" class="flex-col flex  gap-2">
                         
                         <label for="bio" class="font-semibold text-xl">Bio</label>
                         <textarea name="bio" id="bioarea" class="resize-none outline-none border-[1px] rounded-lg mb-2 border-gray-100/50 bg-transparent min-h-10 p-4" maxlength="150" placeholder="Bio..."></textarea>
