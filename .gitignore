@@ -1,6 +1,6 @@
 node_modules
+postcss.config.js
 package-lock.json
 src
 public/img/p
 .env
-postcss.config.js
