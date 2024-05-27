@@ -1,14 +1,10 @@
 const express = require('express');
 const userModel = require('../models/userModel');
 const router =express();
-const findingUser = require('../controllers/findingUser')
+const findingUser = require('../utility/findingUser')
+const dp = require('../utility/dpFinder')
 
 
-const dp = (user) => {
-    const base64Data = user.dp.toString('base64');
-    const contentType = user.content_type || 'image/jpeg';
-    return { base64Data, contentType };
-};
 
 
 

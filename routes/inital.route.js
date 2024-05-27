@@ -1,14 +1,11 @@
 require("dotenv").config();
 const express = require('express');
 const bcrypt = require('bcrypt');
-const jwt = require("jsonwebtoken");
 const userModel = require('../models/userModel');
+const generateToken = require("../utility/genrateToken");
 const router = express();
-const jwtS = process.env.JWT_SECERT ;
 
-const generateToken = (username)=>{
-  return  jwt.sign({username} , jwtS , {expiresIn : '1hr'})
-} ;
+
 
 
 router.get('/' , (req,res)=>{

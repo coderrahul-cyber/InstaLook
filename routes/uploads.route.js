@@ -1,9 +1,16 @@
+require("dotenv").config();
+const jwtS = process.env.JWT_SECERT ;
 const express = require('express');
 const router = express();
+const jwt = require('jsonwebtoken');
 const userModel = require('../models/userModel');
 const postModel = require('../models/postModel');
 const multer = require('multer');
 const upload = multer({storage : multer.memoryStorage()});
+
+const generateToken = (username)=>{
+    return  jwt.sign({username} , jwtS , {expiresIn : '1hr'})
+  } ;
 
 router.post('/',upload.single('file') , async (req,res)=>{
     // res.send("Done the post")
@@ -44,7 +51,7 @@ router.post('/updatedp', upload.single('file'), async (req, res) => {
                 return res.status(404).json({ error: "User not found" });
             }
     
-            console.log("Profile picture updated");
+        
             return res.redirect("/user/edit");
         } catch (error) {
             console.error("Error updating profile picture:", error);
@@ -52,6 +59,43 @@ router.post('/updatedp', upload.single('file'), async (req, res) => {
         }
     });
 
+    router.post('/detail', async (req, res) => {
+        try {
+            let update = {};
+            if (req.body.bio && req.body.bio.trim() !== "") {
+                update.bio = req.body.bio;
+            }
+            if (req.body.username && req.body.username.trim() !== "") {
+                update.username = req.body.username;
+            }
+            if (req.body.name && req.body.name.trim() !== "") {
+                update.fullName = req.body.name;
+            }
+    
+            // Check if the new username already exists
+            if (update.username && update.username !== req.user.username) {
+                const existingUser = await userModel.findOne({ username: update.username });
+                if (existingUser) {
+                    req.flash("error_msg", "Username already taken!");
+                    return res.redirect('/user/edit');
+                }
+            }
+    
+            const user = await userModel.findOneAndUpdate({ username: req.user.username }, update, { new: true });
+            // here we are clearing the token/cookie from the client and updating with new as we have set the cookie from username 
+            res.clearCookie("token");
+    
+            // Generate a new JWT with the updated username
+            const token = generateToken(user.username);
+            res.cookie("token", token, { httpOnly: true });
+    
+            res.redirect('/user');
+        } catch (error) {
+            console.error("Error updating user details:", error);
+            req.flash("error_msg", "An error occurred while updating details.");
+            res.redirect('/user/edit');
+        }
+    });
 
 
 
