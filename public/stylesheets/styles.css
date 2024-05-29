@@ -1245,6 +1245,9 @@ video {
 .pl-\[30px\] {
   padding-left: 30px;
 }
+.pr-1 {
+  padding-right: 0.25rem;
+}
 .pr-4 {
   padding-right: 1rem;
 }
@@ -1349,6 +1352,10 @@ video {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 .text-sky-400 {
   --tw-text-opacity: 1;

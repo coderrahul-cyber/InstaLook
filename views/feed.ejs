@@ -67,79 +67,66 @@
 
                 <div class="posts w-[70%] flex flex-col  justify-center items-center  text-white  "> 
 
-                    <div class="post max-w-[75.2%] bg-black border-b-2 border-gray-500/30 pb-[8px] mb-[20px]">
-                        <div class="head flex items-center g w-full justify-between px-[4px] py-[10px]">
-
-                            <div class="namm flex items-center gap-[5px]">
-                                <div class="dp inline-block w-[2vmax] h-[2vmax] rounded-full overflow-hidden"><img src="https://images.unsplash.com/photo-1713810211578-87d0dc635917?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8fA%3D%3D" class="object-cover w-full h-full object-center" alt=""></div>
-
-
-                            <div class="name inline-block text-sm ">Rahul singh samant</div>
-
-
+                 
+                    <% posts.forEach(post => { %>
+                        <div class="post max-w-[75.2%] bg-black border-b-2 border-gray-500/30 pb-[8px] mb-[20px]">
+                            <div class="head flex items-center g w-full justify-between px-[4px] py-[10px]">
+                                <div class="namm flex items-center gap-[5px]">
+                                    <div class="dp inline-block w-[2vmax] h-[2vmax] rounded-full overflow-hidden">
+                                        <% if (post.userDetails && post.userDetails.dp) { %>
+                                            <img src="data:<%= post.userDetails.content_type %>;base64,<%= post.userDetails.dp.toString('base64') %>" class="object-cover w-full h-full object-center" alt="User Image">
+                                        <% } else { %>
+                                            <img src="/img/default/default.png" class="object-cover w-full h-full object-center" alt="Default User Image">
+                                        <% } %>
+                                    </div>
+                                    <div class="name inline-block text-sm ">
+                                        <% if (post.userDetails) { %>
+                                            <%= post.userDetails.fullName %>
+                                        <% } else { %>
+                                            Unknown User
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <div class="icon pr-[2px]">
+                                    <img src="../img/default/dot-more-7.png" class="invert w-[20px]" alt="">
+                                </div>
                             </div>
-                            
-                            <div class="icon pr-[2px]"><img src="../img/default/dot-more-7.png" class="invert w-[20px] " alt=""></div>
-
-
-                        </div>
-
-                        <div class="imagee border-2 border-gray-500/30 rounded-md overflow-hidden max-w-[1080px] max-h-[1350px] ">
-                            <img src="https://images.unsplash.com/photo-1713962497443-5fadcdb95fc4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D" class="object-cover object-center" alt="">
-
-                        </div>
-                        <div class="icons flex justify-between items-center p-[4px]">
-                            <div class="first flex gap-[5px] items-center  ">
-                                <img src="../img/default/heart-7.png" class="w-[25px] invert h-[25px] hover:cursor-pointer " alt="">
-                               <img src="../img/svg/comment.svg" class="invert hover:cursor-pointer" alt="">
-                               <img src="../img/svg/send.svg" class="invert hover:cursor-pointer" alt="">
+                            <div class="imagee border-2 border-gray-500/30 rounded-md overflow-hidden max-w-[1080px] max-h-[1350px] ">
+                                <img src="data:<%= post.contentType %>;base64,<%= post.base64Data %>" class="object-cover object-center" alt="Post Image">
                             </div>
-                            <div class="save  ">
-                                <img src="../img/svg/save.svg" class="invert  hover:cursor-pointer" alt="">
+                            <div class="icons flex justify-between items-center p-[4px]">
+                                <div class="first flex gap-[5px] items-center">
+                                    <a href="/user/like/<%= post._id %>">
+                                        <%if(post.likes.length > 0){%>
+                                            <!-- <img src="../img/default/heart-7.png"  alt=""> -->
+                                            <i class="ri-heart-fill"  class="w-[25px] invert h-[25px] hover:cursor-pointer"></i>
+                                        <% }else{%>
+                                            
+                                            <img src="../img/default/heart-7.png" class="w-[25px] invert h-[25px] hover:cursor-pointer" alt="">
+                                        <%}%>
+                                    </a>
+                                    <img src="../img/svg/comment.svg" class="invert hover:cursor-pointer" alt="">
+                                    <img src="../img/svg/send.svg" class="invert hover:cursor-pointer" alt="">
+                                </div>
+                                <div class="save">
+                                    <img src="../img/svg/save.svg" class="invert hover:cursor-pointer" alt="">
+                                </div>
                             </div>
-                        </div>
-                        <div class="caption px-[4px] py-[5px]">
-                            <p class="font-serif text-sm tracking-normal line-clamp-3 hover:line-clamp-none">this cpation side hjkdhasbd,jxncjhxkzhcghbchksgdbjlorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis numquam sint fugiat ex perferendis quae tenetur nobis maiores vitae animi accusantium, praesentium pariatur sed officia! Voluptatum molestias tempora dignissimos nostrum.</p>
-                        </div>
-                    </div>
-
-
-
-                    <div class="post max-w-[75.2%] bg-black border-b-2 border-gray-500/30">
-                        <div class="head flex items-center g w-full justify-between px-[4px] py-[10px]">
-
-                            <div class="namm flex items-center gap-[5px]">
-                                <div class="dp inline-block w-[2vmax] h-[2vmax] rounded-full overflow-hidden"><img src="https://images.unsplash.com/photo-1713810211578-87d0dc635917?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8fA%3D%3D" class="object-cover w-full h-full object-center" alt=""></div>
-
-
-                            <div class="name inline-block text-sm ">Rahul singh samant</div>
-
-
-                            </div>
-                            
-                            <div class="icon pr-[2px]"><img src="../img/default/dot-more-7.png" class="invert w-[20px] " alt=""></div>
-
-
-                        </div>
-
-                        <div class="imagee border-2 border-gray-500/30 rounded-md overflow-hidden max-w-[1080px] max-h-[1350px] ">
-                            <img src="https://images.unsplash.com/photo-1713962497443-5fadcdb95fc4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D" class="object-cover object-center" alt="">
-
-                        </div>
-                        <div class="icons flex justify-between items-center p-[4px]">
-                            <div class="first flex gap-[5px] items-center  ">
-                                <img src="../img/default/heart-7.png" class="w-[25px] invert h-[25px] hover:cursor-pointer " alt="">
-                               <img src="../img/svg/comment.svg" class="invert hover:cursor-pointer" alt="">
-                               <img src="../img/svg/send.svg" class="invert hover:cursor-pointer" alt="">
-                            </div>
-                            <div class="save  ">
-                                <img src="../img/svg/save.svg" class="invert  hover:cursor-pointer" alt="">
+                            <p class="text-xs pr-1"><span class="text-xs"><%= post.likes.length %></span> Like<%= post.likes.length === 1 ? '' : 's' %></p>
+                            <div class="caption px-[4px] py-[5px]">
+                                <p class="font-serif text-sm tracking-normal line-clamp-3 hover:line-clamp-none"><%= post.caption %></p>
                             </div>
                         </div>
-                        <div class="caption px-[4px] py-[5px]">
-                            <p class="font-serif text-sm tracking-normal line-clamp-3 hover:line-clamp-none">this cpation side hjkdhasbd,jxncjhxkzhcghbchksgdbjlorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis numquam sint fugiat ex perferendis quae tenetur nobis maiores vitae animi accusantium, praesentium pariatur sed officia! Voluptatum molestias tempora dignissimos nostrum.</p>
-                        </div>
-                    </div>
+                    <% }) %>
+                    
+                    
+                    
+
+
+
+
+
+                   
 
 
                 </div> 

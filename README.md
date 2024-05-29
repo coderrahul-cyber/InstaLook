@@ -5,7 +5,9 @@ Welcome to InstaLook, a dynamic platform that brings the essence of Instagram wi
 # 🚀 Features
 
 ## Post Images: 
+
 Share your favorite moments with the world by posting images just like on Instagram.
+
 ## Explore Feeds:
 Dive into a stream of captivating images from other users, curated based on your interests.
 ## Like and Comment:
