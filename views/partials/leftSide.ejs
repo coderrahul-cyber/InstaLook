@@ -222,8 +222,12 @@
             <img class="capI w-[40vw] mr-1 h-full object-cover object-center" src="" alt="">
             <div class="cpation ">
                 <div class="userin my-6 mx-4 flex gap-2">
-                     <img src="../img/p/428076736_1056279748962087_2851713635285337726_n.jpg" class="max-w-[2vw] max-h-[2vw] rounded-full" alt="">
-                    <div class="username font-semibold">selenagomez</div>
+                    <%if(user && user.dp){%>
+                        <img src="data:<%=contentType %> ;base64 , <%= base64Data %> " class="w-[2vw] h-[2vw] rounded-full" alt="">
+                    <%}else{%>
+                        <img src="/img/default/default.png " class="w-[2vw] [2vw] rounded-full" alt="">
+                    <%}%>
+                    <div class="username font-semibold"><%= user.username %></div>
 
                 </div>
 
