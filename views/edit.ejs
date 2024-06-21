@@ -42,14 +42,14 @@
                     <form action="/upload/detail" method="post" class="flex-col flex  gap-2">
                         
                         <label for="bio" class="font-semibold text-xl">Bio</label>
-                        <textarea name="bio" id="bioarea" class="resize-none outline-none border-[1px] rounded-lg mb-2 border-gray-100/50 bg-transparent min-h-10 p-4" maxlength="150" placeholder="Bio..."></textarea>
+                        <textarea name="bio" id="bioarea" class="resize-none outline-none border-[1px] rounded-lg mb-2 border-gray-100/50 bg-transparent min-h-10 p-4" maxlength="150" placeholder="<%= user.bio %>"></textarea>
 
                         <label for="name" class="font-semibold text-xl">fullname</label>
-                        <input type="text" class="border-[1px] rounded-md border-gray-100/50 bg-transparent mb-3 h-10 px-1 outline-none" maxlength="20" name="name" placeholder="name">
+                        <input type="text" class="border-[1px] rounded-md border-gray-100/50 bg-transparent mb-3 h-10 px-1 outline-none" maxlength="20" name="name" placeholder="<%= user.fullName %>">
                         
                         
                         <label for="username" class="font-semibold text-xl">username</label>
-                        <input type="text" class="border-[1px] rounded-md border-gray-100/50 bg-transparent h-10 px-1 outline-none" minlength="2" maxlength="20" name="username" placeholder="Username">
+                        <input type="text" class="border-[1px] rounded-md border-gray-100/50 bg-transparent h-10 px-1 outline-none" minlength="2" maxlength="20" name="username" placeholder="<%= user.username %>">
                         <button type="reset" class="bg-red-600  mt-8 w-[30%] font-semibold self-end text-sm px-8 h-10 rounded-lg">reset</button>
                         <button id="hidesub" type="submit" class="hidden" ></button>
                     </form>

@@ -3,7 +3,8 @@ const userModel = require('../models/userModel');
 const postModel = require('../models/postModel');
 const router =express();
 const findingUser = require('../utility/findingUser')
-const dp = require('../utility/dpFinder')
+const dp = require('../utility/dpFinder');
+const randomNum = require("../utility/randomnumber");
 
 
 
@@ -115,9 +116,9 @@ router.get("/feed", async (req, res) => {
 
         if (user && user.dp) {
             const { base64Data, contentType } = dp(user); // Function for the dp
-            res.render("feed", { user, base64Data, contentType, posts });
+            res.render("feed", {randomNum , user, base64Data, contentType, posts });
         } else {
-            res.render("feed", { user, posts });
+            res.render("feed", {randomNum , user, posts });
         }
     } catch (error) {
         console.error("Error fetching user data:", error);
@@ -179,6 +180,36 @@ router.get("/edit" , async (req,res)=>{
         res.status(500).send("Internal Server Error");
     }
     
+});
+
+
+router.get('/like/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const post = await postModel.findById(id);
+        const loggedInUser = await userModel.findOne({ username: req.user.username });
+
+        if (!loggedInUser) return res.redirect('/');
+        if (!post) return res.status(404).send('Post not found');
+
+        const userId = loggedInUser._id;
+
+        if (post.likes.includes(userId)) {
+            // User has already liked the post, so unlike it
+            post.likes.pull(userId);
+        } else {
+            // User has not liked the post, so like it
+            post.likes.push(userId);
+        }
+
+        await post.save();
+        res.redirect('/user/feed');
+        // If you want to use AJAX, you can return a JSON response instead
+        // res.json({ success: true, likes: post.likes.length });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
 
