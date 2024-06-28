@@ -227,8 +227,11 @@
                     <%}else{%>
                         <img src="/img/default/default.png " class="w-[2vw] [2vw] rounded-full" alt="">
                     <%}%>
-                    <div class="username font-semibold"><%= user.username %></div>
-
+                    <%if(user){%>
+                        <div class="username font-semibold"><%= user.username %></div>                    
+                    <%}else{%>
+                    <div class="username font-semibold">User</div>
+                    <%}%>
                 </div>
 
                <textarea class="bg-transparent outline-none border-none w-[15vw] min-h-16 resize-none" id="textarea" placeholder="Enter your caption" ></textarea>

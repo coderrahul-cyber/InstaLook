@@ -19,47 +19,36 @@
 
 
                         <div class="flex  items-stretch gap-2">
-
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1654010816950-55f59acb385a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-                
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1713973573211-7f282ce309ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-
-
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1654010816950-55f59acb385a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-                
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1713973573211-7f282ce309ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1654010816950-55f59acb385a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-                
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1713973573211-7f282ce309ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1654010816950-55f59acb385a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-                
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1713973573211-7f282ce309ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D" class="object-cover object-center w-full h-full" alt="">
-                            </div>
+                            <% if (user.dp) { %>
+                                <div class="dps flex flex-col items-center">
+                                    <div class="list flex-shrink-0 w-[80px] h-[80px] border-red-500 border-2 rounded-full overflow-hidden">
+                                        <img src="data:<%= user.content_type %>;base64,<%= user.dp.toString('base64') %>" class="object-cover object-center w-full h-full" alt="">
+                                    </div>
+                                    <p class="text-white font-semibold text-xs text-center">your story</p>
+                                </div>
+                            <% }else{%>
+                                <div class="dps flex flex-col items-center">
+                                    <div class="list flex-shrink-0 w-[80px] h-[80px] border-red-500 border-2 rounded-full overflow-hidden">
+                                        <img src="../img/default/default.png" class="object-cover object-center w-full h-full" alt="">
+                                    </div>
+                                    <p class="text-white font-semibold text-xs text-center">your story</p>
+                                </div>
+                            <%} %>
+                            <% all.forEach(user => { %>
+                                <% if (user.dp) { %>
+                                    <div class="dps flex flex-col items-center">
+                                        <div class="list flex-shrink-0 w-[80px] h-[80px] border-red-500 border-2 rounded-full overflow-hidden">
+                                            <img src="data:<%= user.content_type %>;base64,<%= user.dp.toString('base64') %>" class="object-cover object-center w-full h-full" alt="">
+                                        </div>
+                                        <p class="text-white font-semibold text-xs text-center w-16 overflow-hidden"><%= user.username %></p>
 
 
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1654010816950-55f59acb385a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-                
-                            <div class="list flex-shrink-0 w-[60px] h-[60px] border-red-500 border-2 rounded-full overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1713973573211-7f282ce309ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D" class="object-cover object-center w-full h-full" alt="">
-                            </div>
-                
+                                    </div>
+                                <% } %>
+                            <% }) %>
+                            
+                            
+                      
                         </div>
                     </div>
                 
@@ -91,20 +80,20 @@
                                     <img src="../img/default/dot-more-7.png" class="invert w-[20px]" alt="">
                                 </div>
                             </div>
-                            <div class="imagee border-2 border-gray-500/30 rounded-md overflow-hidden w-[1080px] h-[700px] ">
+                            <div class="imagee border-2 border-gray-500/30 rounded-md overflow-hidden max-w-[1080px] max-h-[450px] ">
                                 <img src="data:<%= post.contentType %>;base64,<%= post.base64Data %>" class="object-cover h-[100%] w-[100%] object-center" alt="Post Image">
                             </div>
                             <div class="icons flex justify-between items-center p-[4px]">
                                 <div class="first flex gap-[5px] items-center">
-                                    <a href="/user/like/<%= post._id %>">
+                                    <!-- <a href="/user/like/<%= post._id %>"> -->
                                         <!-- <%if(post.likes.length > 0){%> -->
-                                            <!-- <img src="../img/default/heart-7.png"  alt=""> -->
-                                            <i class="ri-heart-fill"  class="w-[25px] invert h-[25px] hover:cursor-pointer"></i>
+                                        <!-- <i class="ri-heart-fill"  class="w-[25px] invert h-[25px] hover:cursor-pointer"></i> -->
                                         <!-- <% }else{%> -->
-                                            
-                                            <!-- <img src="../img/default/heart-7.png" class="w-[25px] invert h-[25px] hover:cursor-pointer" alt=""> -->
+                                        
+                                        <!-- <img src="../img/default/heart-7.png" class="w-[25px] invert h-[25px] hover:cursor-pointer" alt=""> -->
                                         <!-- <%}%> -->
-                                    </a>
+                                    <!-- </a> -->
+                                    <img src="../img/default/heart-7.png" class="invert hover:cursor-pointer w-6 h-6"  alt="">
                                     <img src="../img/svg/comment.svg" class="invert hover:cursor-pointer" alt="">
                                     <img src="../img/svg/send.svg" class="invert hover:cursor-pointer" alt="">
                                 </div>

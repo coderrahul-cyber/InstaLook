@@ -5,6 +5,7 @@ const router =express();
 const findingUser = require('../utility/findingUser')
 const dp = require('../utility/dpFinder');
 const randomNum = require("../utility/randomnumber");
+const random = require('../utility/randomnumber');
 
 
 
@@ -88,22 +89,22 @@ router.get("/feed", async (req, res) => {
     try {
         const user = await findingUser(req.user.username);
 
+
+
         const randomPosts = await postModel.aggregate([
-            
             { $sample: { size: 14 } },
             {
                 $lookup: {
                     from: "userdatas", // Assuming the user collection name is 'userdatas'
                     localField: "userId",
                     foreignField: "_id",
-                    as: "userDetails",
-                    
+                    as: "userDetails"
                 }
             }
         ]);
+
         // Convert each post's data buffer to a base64-encoded string and ensure user details are included
         const posts = randomPosts.map(post => {
-         
             const base64Data = post.data.toString('base64');
             return {
                 ...post,
@@ -112,19 +113,24 @@ router.get("/feed", async (req, res) => {
                 userDetails: post.userDetails[0] // assuming userDetails array contains one user object
             };
         });
-        // console.log(posts)
 
+        let base64Data, contentType;
         if (user && user.dp) {
-            const { base64Data, contentType } = dp(user); // Function for the dp
-            res.render("feed", {randomNum , user, base64Data, contentType, posts });
-        } else {
-            res.render("feed", {randomNum , user, posts });
+            const dpData = dp(user); // Function for the dp
+            base64Data = dpData.base64Data;
+            contentType = dpData.contentType;
         }
+
+            const all = await userModel.find({_id : {$ne : user._id}});
+        const randomNum = random ;
+
+        res.render("feed", {all, randomNum, user, base64Data, contentType, posts });
     } catch (error) {
         console.error("Error fetching user data:", error);
         res.status(500).send("Internal Server Error");
     }
 });
+
 
 
 

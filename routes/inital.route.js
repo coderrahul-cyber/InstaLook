@@ -25,16 +25,18 @@ router.post('/newUser' , async (req,res ,next)=>{
       return  res.redirect("/register")
     } 
 
-    bcrypt.genSalt(10 , (err , salt)=>{
-        bcrypt.hash(password , salt , async (err , hash)=>{
-            const newUser = await userModel.create({
-                username ,
-                email,
-                fullName : name ,
-                password : hash 
-            })
-        })
-    })
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
+
+    const newUser = new userModel({
+        username,
+        email,
+        fullName: name,
+        password: hash
+    });
+
+    await newUser.save();
+
 
     let token =  await generateToken(username);
 
@@ -75,6 +77,11 @@ router.get('/logout', (req,res)=>{
     res.clearCookie("token");
     res.redirect('/');
 });
+
+
+router.get('/error' , (req,res)=>{
+    res.render("error");
+})
 
 
 

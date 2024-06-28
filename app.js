@@ -65,7 +65,7 @@ app.use("/upload", isloggedIn, uploadRoute);
 // error handling
 app.use((err, req, res, next) => {
     console.error(err.stack)
-    res.status(500).send('Something broke!')
+    res.redirect('/error');
   })
   
 app.listen(port , ()=>{
